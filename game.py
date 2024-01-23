@@ -28,6 +28,4 @@ while run:
 
 	screen.fill(bg_color)
 	screen.blit(player_sprite, (0, 0))
-
-	# Salgo de pygame
 pygame.quit()
