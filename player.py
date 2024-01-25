@@ -12,7 +12,7 @@ class Player(pygame.sprite.Sprite):
 
         self.x = x * TILESIZE
         self.y = y * TILESIZE
-        self.widht = TILESIZE
+        self.width = TILESIZE
         self.height = TILESIZE
         self.x_change = 0
         self.y_change = 0
@@ -27,6 +27,13 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.movement()
+        self.rect.x+=self.x_change
+        self.collide_blocks("x")
+        self.rect.y+=self.y_change
+        self.collide_blocks("y")
+
+        self.x_change=0
+        self.y_change=0
 
     def movement(self):
         keys = pygame.key.get_pressed()
@@ -39,8 +46,25 @@ class Player(pygame.sprite.Sprite):
         if keys[pygame.K_DOWN]:
             self.rect.y += PLAYER_SPEED
 
+    def collide_blocks(self, direction):
+        if direction == "x":
+            hits = pygame.sprite.spritecollide(self, self.game
+                                               .blocks, False)
+            if hits:
+                if self.x_change > 0:
+                    self.rect.x = hits[0].rect.left - self.rect.width
+                if self.x_change < 0:
+                    self.rect.x = hits[0].rect.right
+        if direction == "y":
+            hits = pygame.sprite.spritecollide(self, self.game.blocks, False)
+            if hits:
+                if self.y_change > 0:
+                    self.rect.y = hits[0].rect.top - self.rect.height
+                if self.y_change < 0:
+                    self.rect.y = hits[0].rect.bottom
+
     def damage_collision(self, obstacle, damage):
-        if (self.rect[0] == obstacle.position[0]):
+        if self.rect[0] == obstacle.position[0]:
             self.health -= damage
 
     def change_armoured(self):
