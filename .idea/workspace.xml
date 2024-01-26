@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bde5355c-bf14-4a23-9941-1543f5ea88c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/robot8bit-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/robot8bit-game.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/spriteSheet_fireEffect03_21x26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/spriteSheet_lightBulbSmallAnimation_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/spriteSheet_lightingBulb02_68x73.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/spriteSheet_tiledLiquids_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/tilesFloor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/tilesStuff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/16px/tilesWalls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/spriteSheet_fireEffect03_42x52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/spriteSheet_lightBulbSmallAnimation_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/spriteSheet_lightingBulb02_136x146.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/spriteSheet_tiledLiquids_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/tilesFloor32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/tilesStuff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/32px/tilesWalls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/spriteSheet_fireEffect03_63x78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/spriteSheet_lightBulbSmallAnimation_48x48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/spriteSheet_lightingBulb02_204x219.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/spriteSheet_tiledLiquids_48x48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/tilesFloor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/tilesStuff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/48px/tilesWalls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/400Aanimated.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/400Banimated.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/400Canimated.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/400Danimated.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/LabFitting01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/doorsA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/doorsB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/doors_laboratory.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/fireMouth.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/labFetusAnimation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/lightBulbSmallAnimation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/lightingBulb.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/tiles_laboratory_landofpixels/tiles_laboratory_LandOfPixels/examples/tiledLiquids.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
@@ -81,22 +41,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.button.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.map.executor&quot;: &quot;Run&quot;,
-    &quot;Python.player.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/millan.orseb23_trian/AppData/Local/Programs/Python/Python311/python.exe&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.button.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.game.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.map.executor": "Run",
+    "Python.player.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/millan.orseb23_trian/AppData/Local/Programs/Python/Python311/python.exe",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\millan.orseb23_trian\Desktop\Sebastián Millán Ordóñez\SGE\robot8bit-game\assests\images" />
@@ -170,5 +130,31 @@
       <updated>1705950825757</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

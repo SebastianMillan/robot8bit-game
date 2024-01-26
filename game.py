@@ -11,7 +11,7 @@ class Game:
     def __init__(self):
         pygame.init()
 
-        self.screen =  pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT), pygame.FULLSCREEN)
+        self.screen =  pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
         self.font=pygame.font.Font('assests/fonts/arial_narrow_7.ttf',32)
