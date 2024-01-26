@@ -1,13 +1,13 @@
 import sys
 import pygame
 from game import Game
+from intro_screen import IntroScreen
 
 g = Game()
-g.intro_screen()
+i=IntroScreen(g)
+i.display()
 g.new()
 while g.running:
     g.main()
-    g.game_over()
-
 pygame.quit()
 sys.exit()

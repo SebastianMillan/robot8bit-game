@@ -7,8 +7,8 @@ class Block(pygame.sprite.Sprite):
         self.groups= self.game.all_sprites, self.game.blocks
         pygame.sprite.Sprite.__init__(self, self.groups)
 
-        self.x = x*TILESIZE
-        self.y = y *TILESIZE
+        self.x = x * TILESIZE
+        self.y = y * TILESIZE
         self.width = TILESIZE
         self.height = TILESIZE
 

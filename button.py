@@ -1,9 +1,11 @@
 import pygame.font
 
+from config import GENERAL_FONT
+
 
 class Button:
     def __init__(self, x, y, width, height, fg, bg, content, fontsize):
-        self.font=pygame.font.Font("assests/fonts/arial_narrow_7.ttf", fontsize)
+        self.font=pygame.font.Font(GENERAL_FONT, fontsize)
         self.content = content
 
         self.x = x

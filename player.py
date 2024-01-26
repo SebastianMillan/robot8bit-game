@@ -16,54 +16,56 @@ class Player(pygame.sprite.Sprite):
         self.x_change = 0
         self.y_change = 0
 
-        self.image = pygame.image.load('assests/images/watter_sprite.png').convert()
+        self.image = self.game.character_spritesheet.get_sprite(1, 1, self.width, self.height)
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
-
-        self.health = 10
+        self.max_health = PLAYER_HEALTH
+        self.actual_health= self.max_health
         self.armoured = False
 
     def update(self):
         self.movement()
-        self.y_change += self.rect.y
-        self.x_change += self.rect.x
+        self.rect.x += self.x_change
+        self.collide_blocks('x')
+        self.rect.y += self.y_change
+        self.collide_blocks('y')
+        self.death()
+        self.x_change = 0
+        self.y_change = 0
 
 
     def movement(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            self.rect.x -= PLAYER_SPEED
-            self.collide_blocks("x")
+            self.x_change -= PLAYER_SPEED
         if keys[pygame.K_RIGHT]:
-            self.rect.x += PLAYER_SPEED
-            self.collide_blocks("x")
+            self.x_change += PLAYER_SPEED
         if keys[pygame.K_UP]:
-            self.rect.y -= PLAYER_SPEED
-            self.collide_blocks("y")
+            self.y_change -= PLAYER_SPEED
         if keys[pygame.K_DOWN]:
-            self.rect.y += PLAYER_SPEED
-            self.collide_blocks("y")
+            self.y_change += PLAYER_SPEED
 
     def collide_blocks(self, direction):
-        if direction == "x":
-            for sprite in self.game.blocks:
-                if sprite.rect.colliderect(self.rect):
-                    if self.x>=self.rect.x:
-                        self.rect.right=sprite.rect.left
-                    else:
-                        self.rect.left=sprite.rect.right
-        if direction == "y":
-            for sprite in self.game.blocks:
-                if sprite.rect.colliderect(self.rect):
-                    if self.y>=self.rect.y:
-                        self.rect.bottom = sprite.rect.top
-                    else:
-                        self.rect.top = sprite.rect.bottom
+        hits = pygame.sprite.spritecollide(self, self.game.blocks, False)
+        if hits:
+            self.actual_health-=DAMAGE_COLLIDE
+            if direction == "x":
+                if hits:
+                    if self.x_change > 0:
+                        self.rect.x = hits[0].rect.left - self.rect.width
+                    if self.x_change < 0:
+                        self.rect.x = hits[0].rect.right
+            if direction == "y":
+                if hits:
+                    if self.y_change > 0:
+                        self.rect.y = hits[0].rect.top - self.rect.height
+                    if self.y_change < 0:
+                        self.rect.y = hits[0].rect.bottom
 
-    def damage_collision(self, obstacle, damage):
-        if self.rect[0] == obstacle.position[0]:
-            self.health -= damage
+    def death(self):
+        if self.actual_health<=0:
+            self.game.game_over()
 
     def change_armoured(self):
         if (self.armoured):
