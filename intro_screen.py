@@ -20,7 +20,7 @@ class IntroScreen(Screen):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     intro = False
-                    self.running = False
+                    self.game.running = False
 
             mouse_pos = pygame.mouse.get_pos()
             mouse_pressed = pygame.mouse.get_pressed()

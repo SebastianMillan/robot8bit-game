@@ -19,6 +19,7 @@ class GameOverScreen(Screen):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.game.running=False
+
             mouse_pos=pygame.mouse.get_pos()
             mouse_pressed=pygame.mouse.get_pressed()
             if restart_button.is_pressed(mouse_pos, mouse_pressed):
