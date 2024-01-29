@@ -22,14 +22,16 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = self.y
         self.max_health = PLAYER_HEALTH
         self.actual_health= self.max_health
-        self.armoured = False
+        self.is_armoured = False
 
     def update(self):
         self.movement()
         self.rect.x += self.x_change
         self.collide_blocks('x')
+        self.dive_watter()
         self.rect.y += self.y_change
         self.collide_blocks('y')
+        self.dive_watter()
         self.death()
         self.x_change = 0
         self.y_change = 0
@@ -63,12 +65,23 @@ class Player(pygame.sprite.Sprite):
                     if self.y_change < 0:
                         self.rect.y = hits[0].rect.bottom
 
+    def dive_watter(self):
+        dive = pygame.sprite.spritecollide(self, self.game.watter, False)
+        if not self.is_armoured:
+            print("sin armadura")
+            if dive:
+                print("dive")
+                self.actual_health-=DAMAGE_WATTER
+
+
+
+
     def death(self):
         if self.actual_health<=0:
             self.game.game_over()
 
     def change_armoured(self):
-        if (self.armoured):
+        if (self.is_armoured):
             self.image = pygame.image.load('assests/images/basic_robot_sprite.png').convert()
         else:
             self.image = pygame.image.load('assests/images/armoured_robot_sprite.png').convert()

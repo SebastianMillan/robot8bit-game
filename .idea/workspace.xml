@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bde5355c-bf14-4a23-9941-1543f5ea88c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/game_over_screen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/intro_screen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spritesheet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assests/maps/map1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +62,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\millan.orseb23_trian\Desktop\Sebastián Millán Ordóñez\SGE\robot8bit-game\assests\maps" />
       <recent name="C:\Users\millan.orseb23_trian\Desktop\Sebastián Millán Ordóñez\SGE\robot8bit-game\assests\images" />
       <recent name="D:\2ºDAM\SGE\robot8bit-game\assests\images" />
     </key>
@@ -75,6 +70,7 @@
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="robot8bit-game" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -96,6 +92,7 @@
     </configuration>
     <configuration name="player" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="robot8bit-game" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>

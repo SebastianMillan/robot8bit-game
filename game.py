@@ -6,6 +6,7 @@ from player import *
 from spritesheet import Spritesheet
 from ui import UI
 from game_over_screen import GameOverScreen
+from watter import Watter
 
 
 class Game:
@@ -16,20 +17,24 @@ class Game:
         self.running = True
         self.character_spritesheet = Spritesheet('assests/images/watter_sprite.png')
         self.terrain_spritesheet = Spritesheet('assests/images/wall_sprite.png')
-
+        self.watter_spritesheet= Spritesheet('assests/images/wall_sprite.png')
         self.player=None
+
     def createTileMap(self):
-        for i, row in enumerate(tilemap):
+        for i, row in enumerate(first_tilemap):
             for j, column in enumerate(row):
                 Ground(self, j, i)
                 if column == "B":
                     Block(self, j, i)
                 if column == "P":
                     self.player=Player(self, j, i)
+                if column == "W":
+                    Watter(self,j,i)
 
     def new(self):
         self.playing = True
         self.all_sprites = pygame.sprite.LayeredUpdates()
+        self.watter = pygame.sprite.LayeredUpdates()
         self.blocks = pygame.sprite.LayeredUpdates()
         self.createTileMap()
         self.ui = UI()
