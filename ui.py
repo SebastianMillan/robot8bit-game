@@ -22,5 +22,14 @@ class UI:
         pygame.draw.rect(self.display_surface, color, current_rect)
         pygame.draw.rect(self.display_surface, UI_BORDER_COLOR, bg_rect, 3)
 
+    def count_diamons(self, diamond_count):
+        text=self.font.render(f"Diamantes: {diamond_count}", True, WHITE)
+        self.display_surface.blit(text,(10,40))
+
+    def count_bombs(self, bombs_count):
+        text = self.font.render(f"Bombas: {bombs_count}", True, WHITE)
+        self.display_surface.blit(text, (10, 70))
+
     def display(self, player):
         self.show_bar(player.actual_health, player.max_health, self.health_bar_rect, HEALTH_COLOR)
+

@@ -1,5 +1,9 @@
+import pygame.sprite
+
 from armour import Armour
 from block import Block
+from bomb import Bomb
+from diamond import Diamond
 from ground import Ground
 from player import *
 from potion import Potion
@@ -33,20 +37,21 @@ class Game:
                 if column == ".":
                     empty_spaces.append((j, i))
         if empty_spaces:
-            first_random_space = random.choice(empty_spaces)
-            Potion(self, first_random_space[0], first_random_space[1])
-            second_random_space = random.choice(empty_spaces)
-            while first_random_space == second_random_space:
-                second_random_space = random.choice(empty_spaces)
-            Potion(self, second_random_space[0], second_random_space[1])
-            third_random_space = random.choice(empty_spaces)
-            while second_random_space == third_random_space:
-                third_random_space = random.choice(empty_spaces)
-            Potion(self, third_random_space[0], third_random_space[1])
-            fourth_random_space = random.choice(empty_spaces)
-            while third_random_space == fourth_random_space:
-                fourth_random_space = random.choice(empty_spaces)
-            Armour(self, third_random_space[0], third_random_space[1])
+            num_potions=3
+            num_bombs=3
+            num_diamonds=5
+            random_space = random.choice(empty_spaces)
+            Armour(self, random_space[0], random_space[1])
+            for i in range(num_potions):
+                random_space = random.choice(empty_spaces)
+                Potion(self, random_space[0], random_space[1])
+            for i in range(num_bombs):
+                random_space = random.choice(empty_spaces)
+                Bomb(self, random_space[0], random_space[1])
+            for i in range(num_diamonds):
+                random_space = random.choice(empty_spaces)
+                Diamond(self, random_space[0], random_space[1])
+
 
 
     def new(self):
@@ -56,6 +61,8 @@ class Game:
         self.blocks = pygame.sprite.LayeredUpdates()
         self.potions=pygame.sprite.LayeredUpdates()
         self.armour = pygame.sprite.LayeredUpdates()
+        self.bombs=pygame.sprite.LayeredUpdates()
+        self.diamonds=pygame.sprite.LayeredUpdates()
         self.createTileMap()
         self.ui = UI()
 
@@ -73,6 +80,8 @@ class Game:
         self.screen.fill((0, 0, 0))
         self.all_sprites.draw(self.screen)
         self.ui.display(self.player)
+        self.ui.count_diamons(self.player.num_diamonds)
+        self.ui.count_bombs(self.player.num_bombs)
         self.clock.tick(FPS)
         pygame.display.update()
 

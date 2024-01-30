@@ -28,6 +28,8 @@ class Player(pygame.sprite.Sprite):
         self.actual_health = self.max_health
         self.is_armoured = False
         self.has_the_armour = False
+        self.num_bombs=0
+        self.num_diamonds=0
 
     def update(self):
         self.movement()
@@ -39,6 +41,8 @@ class Player(pygame.sprite.Sprite):
         self.change_armoured()
         self.take_potion()
         self.take_armour()
+        self.take_bomb()
+        self.take_diamond()
         self.death()
         self.x_change = 0
         self.y_change = 0
@@ -111,5 +115,15 @@ class Player(pygame.sprite.Sprite):
         if hits:
             self.has_the_armour=True
             self.is_armoured=True
+
+    def take_bomb(self):
+        hits = pygame.sprite.spritecollide(self, self.game.bombs, True)
+        if hits:
+            self.num_bombs+=1
+
+    def take_diamond(self):
+        hits = pygame.sprite.spritecollide(self, self.game.diamonds, True)
+        if hits:
+            self.num_diamonds+=1
 
 
