@@ -1,4 +1,6 @@
 import pygame
+
+from bomb import Bomb
 from config import *
 from spritesheet import Spritesheet
 
@@ -28,7 +30,7 @@ class Player(pygame.sprite.Sprite):
         self.actual_health = self.max_health
         self.is_armoured = False
         self.has_the_armour = False
-        self.num_bombs=0
+        self.num_bombs=[]
         self.num_diamonds=0
 
     def update(self):
@@ -61,13 +63,16 @@ class Player(pygame.sprite.Sprite):
                     self.y_change -= PLAYER_SPEED
                 elif event.key == pygame.K_DOWN:
                     self.y_change += PLAYER_SPEED
-                elif event.key == pygame.K_k:
+                elif event.key == pygame.K_t:
                     if self.has_the_armour:
                         self.is_armoured = not self.is_armoured
+                elif event.key== pygame.K_b:
+                    self.throw_bomb()
 
     def collide_blocks(self, direction):
         hits = pygame.sprite.spritecollide(self, self.game.blocks, False)
         if hits:
+            SOUND_DAMAGE.play()
             self.actual_health -= DAMAGE_COLLIDE
             if direction == "x":
                 if hits:
@@ -87,43 +92,65 @@ class Player(pygame.sprite.Sprite):
         if not self.is_armoured:
             if dive:
                 if self.x_change > 0:
+                    SOUND_DAMAGE.play()
                     self.actual_health -= DAMAGE_WATER
                 if self.x_change < 0:
+                    SOUND_DAMAGE.play()
                     self.actual_health -= DAMAGE_WATER
                 if self.y_change > 0:
+                    SOUND_DAMAGE.play()
                     self.actual_health -= DAMAGE_WATER
                 if self.y_change < 0:
+                    SOUND_DAMAGE.play()
                     self.actual_health -= DAMAGE_WATER
 
     def death(self):
         if self.actual_health <= 0:
             self.game.game_over()
+            SOUND_DEAD.play()
 
     def change_armoured(self):
         if self.is_armoured:
+            #SOUND_ARMOURED.play()
             self.image = self.character_armoured_spritesheet.get_sprite(1, 1, self.width, self.height)
         else:
+            #SOUND_ARMOURED.play()
             self.image = self.character_spritesheet.get_sprite(1, 1, self.width, self.height)
 
     def take_potion(self):
         hits = pygame.sprite.spritecollide(self, self.game.potions, True)
-        if hits and not self.actual_health>=self.max_health:
-            self.actual_health+=POTION_HEALTH
+        if hits :
+            SOUND_HEALTH.play()
+            if not self.actual_health>=self.max_health:
+                self.actual_health+=POTION_HEALTH
+
 
     def take_armour(self):
         hits = pygame.sprite.spritecollide(self, self.game.armour, True)
         if hits:
             self.has_the_armour=True
             self.is_armoured=True
+            SOUND_GET_ARMOURED.play()
 
     def take_bomb(self):
         hits = pygame.sprite.spritecollide(self, self.game.bombs, True)
         if hits:
-            self.num_bombs+=1
+            SOUND_TAKE_BOMB.play()
+            self.num_bombs.append(Bomb(self.game,self.x,self.y))
 
     def take_diamond(self):
         hits = pygame.sprite.spritecollide(self, self.game.diamonds, True)
         if hits:
             self.num_diamonds+=1
+            SOUND_TAKE_DIAMOND.play()
+
+    def throw_bomb(self):
+        if len(self.num_bombs)>0:
+            bomb_to_explote= self.num_bombs.pop()
+            bomb_to_explote.rect.x=self.rect.x
+            bomb_to_explote.rect.y=self.rect.y
+            bomb_to_explote.explote()
+
+
 
 

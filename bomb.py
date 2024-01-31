@@ -1,6 +1,8 @@
 import pygame
 
+from block import Block
 from config import *
+from ground import Ground
 from spritesheet import Spritesheet
 
 class Bomb(pygame.sprite.Sprite):
@@ -20,3 +22,27 @@ class Bomb(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x=self.x
         self.rect.y=self.y
+
+    def explote(self):
+        offsets = [(-1, -1), (-1, 0), (-1, 1),
+                   (0, -1), (0, 1),
+                   (1, -1), (1, 0), (1, 1)]
+        for offset in offsets:
+            check_x = self.rect.x // TILESIZE + offset[0]
+            check_y = self.rect.y // TILESIZE + offset[1]
+
+            block_to_destroy=self.get_block_at(check_x, check_y)
+            if isinstance(block_to_destroy,Block):
+                block_to_destroy.kill()
+                new_ground= Ground(self.game, block_to_destroy.rect.x//TILESIZE, block_to_destroy.rect.y//TILESIZE)
+        SOUND_THROW_BOMB.play()
+        self.kill()
+
+    def get_block_at(self, x, y):
+        for block in self.game.blocks:
+            if block.rect.x == x * TILESIZE and block.rect.y == y * TILESIZE:
+                return block
+        return None
+
+
+

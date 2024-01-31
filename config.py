@@ -1,5 +1,9 @@
 from io import open
 
+import pygame.mixer
+
+pygame.mixer.init()
+
 WIN_WIDTH=1312
 WIN_HEIGHT=736
 TILESIZE =32
@@ -39,3 +43,27 @@ UI_BORDER_COLOR_ACTIVE='gold'
 
 with open('assests/maps/map1.txt', 'r') as file:
     first_tilemap = [list(line.strip()) for line in file]
+
+file=open('assests/maps/config_map1.txt','r').read()
+NUM_BOMBS=int(file[2])
+NUM_DIAMONDS=int(file[6])
+NUM_POTIONS=int(file[10])
+
+SOUND_TAKE_DIAMOND= pygame.mixer.Sound('assests/audio/diamond.mp3')
+SOUND_THROW_BOMB= pygame.mixer.Sound('assests/audio/explosion.mp3')
+SOUND_DAMAGE= pygame.mixer.Sound('assests/audio/damage.mp3')
+SOUND_DEAD= pygame.mixer.Sound('assests/audio/dead.mp3')
+SOUND_WIN= pygame.mixer.Sound('assests/audio/win.mp3')
+SOUND_ARMOURED= pygame.mixer.Sound('assests/audio/armoured.mp3')
+SOUND_GET_ARMOURED= pygame.mixer.Sound('assests/audio/get_armour.mp3')
+SOUND_HEALTH=pygame.mixer.Sound('assests/audio/health.mp3')
+SOUND_MUSIC=pygame.mixer.Sound('assests/audio/music.mp3')
+SOUND_INTRO=pygame.mixer.Sound('assests/audio/intro.mp3')
+SOUND_GAME_OVER=pygame.mixer.Sound('assests/audio/game_over.mp3')
+SOUND_TAKE_BOMB=pygame.mixer.Sound('assests/audio/take_bomb.mp3')
+
+
+
+
+
+

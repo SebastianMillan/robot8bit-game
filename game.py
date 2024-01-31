@@ -29,7 +29,9 @@ class Game:
             for j, column in enumerate(row):
                 Ground(self, j, i)
                 if column == "B":
-                    Block(self, j, i)
+                    block=Block(self, j, i)
+                    print(block.rect.x)
+                    print(block.rect.y)
                 if column == "P":
                     self.player=Player(self, j, i)
                 if column == "W":
@@ -37,18 +39,15 @@ class Game:
                 if column == ".":
                     empty_spaces.append((j, i))
         if empty_spaces:
-            num_potions=3
-            num_bombs=3
-            num_diamonds=5
             random_space = random.choice(empty_spaces)
             Armour(self, random_space[0], random_space[1])
-            for i in range(num_potions):
+            for i in range(NUM_POTIONS):
                 random_space = random.choice(empty_spaces)
                 Potion(self, random_space[0], random_space[1])
-            for i in range(num_bombs):
+            for i in range(NUM_BOMBS):
                 random_space = random.choice(empty_spaces)
                 Bomb(self, random_space[0], random_space[1])
-            for i in range(num_diamonds):
+            for i in range(NUM_DIAMONDS):
                 random_space = random.choice(empty_spaces)
                 Diamond(self, random_space[0], random_space[1])
 
@@ -81,7 +80,7 @@ class Game:
         self.all_sprites.draw(self.screen)
         self.ui.display(self.player)
         self.ui.count_diamons(self.player.num_diamonds)
-        self.ui.count_bombs(self.player.num_bombs)
+        self.ui.count_bombs(len(self.player.num_bombs))
         self.clock.tick(FPS)
         pygame.display.update()
 
@@ -95,7 +94,9 @@ class Game:
 
     def game_over(self):
         game_over_screen=GameOverScreen(self)
+        SOUND_DEAD.play()
         game_over_screen.display()
+
 
 
 
