@@ -13,6 +13,8 @@ from game_over_screen import GameOverScreen
 from water import Water
 import random
 
+from win_screen import WinScreen
+
 
 class Game:
     def __init__(self):
@@ -42,16 +44,25 @@ class Game:
             random_space = random.choice(empty_spaces)
             Armour(self, random_space[0], random_space[1])
             for i in range(NUM_POTIONS):
+                self.check_empty_space(empty_spaces)
                 random_space = random.choice(empty_spaces)
                 Potion(self, random_space[0], random_space[1])
             for i in range(NUM_BOMBS):
+                self.check_empty_space(empty_spaces)
                 random_space = random.choice(empty_spaces)
+                print(random_space)
                 Bomb(self, random_space[0], random_space[1])
             for i in range(NUM_DIAMONDS):
+                self.check_empty_space(empty_spaces)
                 random_space = random.choice(empty_spaces)
                 Diamond(self, random_space[0], random_space[1])
 
 
+    def check_empty_space(self,empty_spaces):
+        for i, row in enumerate(first_tilemap):
+            for j, column in enumerate(row):
+                if column == ".":
+                    empty_spaces.append((j, i))
 
     def new(self):
         self.playing = True
@@ -94,8 +105,18 @@ class Game:
 
     def game_over(self):
         game_over_screen=GameOverScreen(self)
-        SOUND_DEAD.play()
         game_over_screen.display()
+
+    def win(self):
+        win_screen=WinScreen(self)
+        win_screen.display()
+
+
+    def check_empty_space(self,empty_spaces):
+        for i, row in enumerate(first_tilemap):
+            for j, column in enumerate(row):
+                if column == ".":
+                    empty_spaces.append((j, i))
 
 
 

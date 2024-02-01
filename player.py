@@ -46,6 +46,7 @@ class Player(pygame.sprite.Sprite):
         self.take_bomb()
         self.take_diamond()
         self.death()
+        self.win()
         self.x_change = 0
         self.y_change = 0
 
@@ -109,6 +110,11 @@ class Player(pygame.sprite.Sprite):
             self.game.game_over()
             SOUND_DEAD.play()
 
+    def win(self):
+        if (self.num_diamonds==NUM_DIAMONDS or self.rect.x>WIN_WIDTH or self.rect.x<0
+                or self.rect.y>WIN_HEIGHT-100 or self.rect.y<0):
+            self.game.win()
+
     def change_armoured(self):
         if self.is_armoured:
             #SOUND_ARMOURED.play()
@@ -121,8 +127,13 @@ class Player(pygame.sprite.Sprite):
         hits = pygame.sprite.spritecollide(self, self.game.potions, True)
         if hits :
             SOUND_HEALTH.play()
-            if not self.actual_health>=self.max_health:
+            if self.actual_health==8:
+                self.actual_health+=POTION_HEALTH-1
+            elif self.actual_health==9:
+                self.actual_health+=POTION_HEALTH-2
+            elif not self.actual_health>=self.max_health:
                 self.actual_health+=POTION_HEALTH
+
 
 
     def take_armour(self):
@@ -150,6 +161,9 @@ class Player(pygame.sprite.Sprite):
             bomb_to_explote.rect.x=self.rect.x
             bomb_to_explote.rect.y=self.rect.y
             bomb_to_explote.explote()
+
+
+
 
 
 

@@ -5,7 +5,7 @@ import pygame.mixer
 pygame.mixer.init()
 
 WIN_WIDTH=1312
-WIN_HEIGHT=736
+WIN_HEIGHT=800
 TILESIZE =32
 FPS=15
 

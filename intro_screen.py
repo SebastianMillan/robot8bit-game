@@ -13,8 +13,8 @@ class IntroScreen(Screen):
     def display(self):
         intro = True
         title = self.font.render('Roque Like SCI- FI Game', True, WHITE)
-        title_rect = title.get_rect(x=10, y=10)
-        play_button = Button(100, 100, 100, 50, BLACK, WHITE, 'Play', 32)
+        title_rect = title.get_rect(center=(WIN_WIDTH/2,WIN_HEIGHT/2))
+        play_button = Button((WIN_WIDTH/2)-70, (WIN_HEIGHT/2)+80, 100, 50, BLACK, WHITE, 'Play', 32)
         SOUND_INTRO.play(-1).set_volume(0.5)
 
         while intro:
@@ -31,7 +31,7 @@ class IntroScreen(Screen):
                 intro = False
                 SOUND_INTRO.stop()
 
-            self.game.screen.blit(self.intro_background, (0, 0))
+            self.game.screen.fill((0,0,255))
             self.game.screen.blit(title, title_rect)
             self.game.screen.blit(play_button.image, play_button.rect)
             self.game.clock.tick(FPS)
