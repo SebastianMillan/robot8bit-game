@@ -23,23 +23,25 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
 
-        self.player=None
+        self.player = None
 
     def createTileMap(self):
         empty_spaces = []
         for i, row in enumerate(first_tilemap):
             for j, column in enumerate(row):
-                Ground(self, j, i)
+                if column == ".":
+                    Ground(self, j, i)
+                    empty_spaces.append((j, i))
                 if column == "B":
-                    block=Block(self, j, i)
+                    block = Block(self, j, i)
                     print(block.rect.x)
                     print(block.rect.y)
                 if column == "P":
-                    self.player=Player(self, j, i)
+                    Ground(self, j, i)
+                    self.player = Player(self, j, i)
                 if column == "W":
-                    Water(self,j,i)
-                if column == ".":
-                    empty_spaces.append((j, i))
+                    Water(self, j, i)
+
         if empty_spaces:
             random_space = random.choice(empty_spaces)
             Armour(self, random_space[0], random_space[1])
@@ -57,8 +59,7 @@ class Game:
                 random_space = random.choice(empty_spaces)
                 Diamond(self, random_space[0], random_space[1])
 
-
-    def check_empty_space(self,empty_spaces):
+    def check_empty_space(self, empty_spaces):
         for i, row in enumerate(first_tilemap):
             for j, column in enumerate(row):
                 if column == ".":
@@ -69,10 +70,10 @@ class Game:
         self.all_sprites = pygame.sprite.LayeredUpdates()
         self.water = pygame.sprite.LayeredUpdates()
         self.blocks = pygame.sprite.LayeredUpdates()
-        self.potions=pygame.sprite.LayeredUpdates()
+        self.potions = pygame.sprite.LayeredUpdates()
         self.armour = pygame.sprite.LayeredUpdates()
-        self.bombs=pygame.sprite.LayeredUpdates()
-        self.diamonds=pygame.sprite.LayeredUpdates()
+        self.bombs = pygame.sprite.LayeredUpdates()
+        self.diamonds = pygame.sprite.LayeredUpdates()
         self.createTileMap()
         self.ui = UI()
 
@@ -104,21 +105,15 @@ class Game:
             self.player.movement()
 
     def game_over(self):
-        game_over_screen=GameOverScreen(self)
+        game_over_screen = GameOverScreen(self)
         game_over_screen.display()
 
     def win(self):
-        win_screen=WinScreen(self)
+        win_screen = WinScreen(self)
         win_screen.display()
 
-
-    def check_empty_space(self,empty_spaces):
+    def check_empty_space(self, empty_spaces):
         for i, row in enumerate(first_tilemap):
             for j, column in enumerate(row):
                 if column == ".":
                     empty_spaces.append((j, i))
-
-
-
-
-

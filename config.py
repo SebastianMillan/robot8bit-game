@@ -41,13 +41,14 @@ TEXT_COLOR='#EEEEEE'
 HEALTH_COLOR='red'
 UI_BORDER_COLOR_ACTIVE='gold'
 
-with open('assests/maps/map1.txt', 'r') as file:
+file_path1 = 'assests/maps/map1.txt'
+with open(file_path1, 'r') as file:
     first_tilemap = [list(line.strip()) for line in file]
-
-file=open('assests/maps/config_map1.txt','r').read()
-NUM_BOMBS=int(file[2])
-NUM_DIAMONDS=int(file[6])
-NUM_POTIONS=int(file[10])
+with open(file_path1, 'r') as file:
+    last_line = file.readlines()[-1]
+NUM_BOMBS=int(last_line[2])
+NUM_DIAMONDS=int(last_line[6])
+NUM_POTIONS=int(last_line[10])
 
 SOUND_TAKE_DIAMOND= pygame.mixer.Sound('assests/audio/diamond.mp3')
 SOUND_THROW_BOMB= pygame.mixer.Sound('assests/audio/explosion.mp3')

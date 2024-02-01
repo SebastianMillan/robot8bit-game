@@ -19,12 +19,13 @@ class GameOverScreen(Screen):
         while self.game.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    self.game.playing=False
                     self.game.running=False
 
             mouse_pos=pygame.mouse.get_pos()
             mouse_pressed=pygame.mouse.get_pressed()
             if restart_button.is_pressed(mouse_pos, mouse_pressed):
-                SOUND_INTRO.play(-1).set_volume(0.5)
+                SOUND_MUSIC.play(-1).set_volume(0.5)
                 SOUND_GAME_OVER.stop()
                 self.game.new()
                 self.game.main()
