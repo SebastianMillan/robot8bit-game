@@ -19,7 +19,7 @@ class Bomb(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.bomb_spritesheet = Spritesheet('assests/images/bomb_sprite.png')
+        self.bomb_spritesheet = Spritesheet(SPRITE_BOMB)
         self.image = self.bomb_spritesheet.get_sprite(1, 1, self.width, self.height)
         self.rect = self.image.get_rect()
         self.rect.x = self.x

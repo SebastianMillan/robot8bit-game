@@ -16,7 +16,7 @@ class Ground(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.ground_spritesheet = Spritesheet('assests/images/floor_sprite.png')
+        self.ground_spritesheet = Spritesheet(SPRITE_FLOOR)
         self.image = self.ground_spritesheet.get_sprite(1, 1, self.width, self.height)
         self.rect = self.image.get_rect()
         self.rect.x = self.x

@@ -15,7 +15,7 @@ class Diamond(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.potion_spritesheet = Spritesheet('assests/images/diamond_sprite.png')
+        self.potion_spritesheet = Spritesheet(SPRITE_DIAMOND)
         self.image = self.potion_spritesheet.get_sprite(1, 1, self.width, self.height)
         self.rect = self.image.get_rect()
         self.rect.x=self.x

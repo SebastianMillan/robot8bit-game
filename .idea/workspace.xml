@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bde5355c-bf14-4a23-9941-1543f5ea88c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assests/maps/map2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/armour.png" beforeDir="false" afterPath="$PROJECT_DIR$/assests/images/armour.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/bomb_sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/assests/images/bomb_sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/diamond_sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/assests/images/diamond_sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/images/intro_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/maps/config_map1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assests/maps/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assests/maps/map1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/armour.py" beforeDir="false" afterPath="$PROJECT_DIR$/armour.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bomb.py" beforeDir="false" afterPath="$PROJECT_DIR$/bomb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_over_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_over_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diamond.py" beforeDir="false" afterPath="$PROJECT_DIR$/diamond.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ground.py" beforeDir="false" afterPath="$PROJECT_DIR$/ground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potion.py" beforeDir="false" afterPath="$PROJECT_DIR$/potion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/water.py" beforeDir="false" afterPath="$PROJECT_DIR$/water.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/win_screen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -15,7 +15,7 @@ class Water(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.water_spritesheet= Spritesheet('assests/images/water_sprite.png')
+        self.water_spritesheet= Spritesheet(SPRITE_WATER)
 
         self.image = self.water_spritesheet.get_sprite(1, 1, self.width, self.height)
 

@@ -15,7 +15,7 @@ class WinScreen(Screen):
         text_rect=text.get_rect(center=(WIN_WIDTH/2,WIN_HEIGHT/2))
         restart_button=Button(10, WIN_HEIGHT -60, 120,50, WHITE, BLACK,'Restart',32)
         SOUND_MUSIC.stop()
-        SOUND_GAME_OVER.play(-1).set_volume(0.5)
+        SOUND_WIN.play(-1).set_volume(0.5)
         while self.game.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -24,8 +24,8 @@ class WinScreen(Screen):
             mouse_pos=pygame.mouse.get_pos()
             mouse_pressed=pygame.mouse.get_pressed()
             if restart_button.is_pressed(mouse_pos, mouse_pressed):
-                SOUND_INTRO.play(-1).set_volume(0.5)
-                SOUND_GAME_OVER.stop()
+                SOUND_WIN.stop()
+                SOUND_MUSIC.play(-1).set_volume(0.5)
                 self.game.new()
                 self.game.main()
 

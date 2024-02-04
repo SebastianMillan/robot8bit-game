@@ -63,6 +63,16 @@ SOUND_INTRO=pygame.mixer.Sound('assests/audio/intro.mp3')
 SOUND_GAME_OVER=pygame.mixer.Sound('assests/audio/game_over.mp3')
 SOUND_TAKE_BOMB=pygame.mixer.Sound('assests/audio/take_bomb.mp3')
 
+SPRITE_BOMB='assests/images/bomb_sprite.png'
+SPRITE_BLOCK='assests/images/wall_sprite.png'
+SPRITE_ARMOUR='assests/images/armour.png'
+SPRITE_DIAMOND='assests/images/diamond_sprite.png'
+SPRITE_FLOOR='assests/images/floor_sprite.png'
+SPRITE_BASIC_PLAYER='assests/images/basic_robot_sprite.png'
+SPRITE_ARMOUR_PLAYER='assests/images/armoured_robot_sprite.png'
+SPRITE_POTION='assests/images/health_sprite.png'
+SPRITE_WATER='assests/images/water_sprite.png'
+
 
 
 

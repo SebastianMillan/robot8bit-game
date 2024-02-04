@@ -20,8 +20,8 @@ class Player(pygame.sprite.Sprite):
         self.x_change = 0
         self.y_change = 0
 
-        self.character_spritesheet = Spritesheet('assests/images/basic_robot_sprite.png')
-        self.character_armoured_spritesheet = Spritesheet('assests/images/armoured_robot_sprite.png')
+        self.character_spritesheet = Spritesheet(SPRITE_BASIC_PLAYER)
+        self.character_armoured_spritesheet = Spritesheet(SPRITE_ARMOUR_PLAYER)
         self.image = self.character_spritesheet.get_sprite(1, 1, self.width, self.height)
         self.rect = self.image.get_rect()
         self.rect.x = self.x
