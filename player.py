@@ -2,21 +2,16 @@ import pygame
 
 from bomb import Bomb
 from config import *
+from item import Item
 from spritesheet import Spritesheet
 
 
-class Player(pygame.sprite.Sprite):
+class Player(pygame.sprite.Sprite, Item):
     def __init__(self, game, x, y):
-        super().__init__()
-        self.game = game
+        Item.__init__(self, game, x, y)
         self._layer=PLAYER_LAYER
         self.groups = self.game.all_sprites
         pygame.sprite.Sprite.__init__(self, self.groups)
-
-        self.x = x * TILESIZE
-        self.y = y * TILESIZE
-        self.width = TILESIZE
-        self.height = TILESIZE
         self.x_change = 0
         self.y_change = 0
 
@@ -69,6 +64,9 @@ class Player(pygame.sprite.Sprite):
                         self.is_armoured = not self.is_armoured
                 elif event.key== pygame.K_b:
                     self.throw_bomb()
+                elif event.key== pygame.K_ESCAPE:
+                    self.game.playing = False
+                    self.game.running = False
 
     def collide_blocks(self, direction):
         hits = pygame.sprite.spritecollide(self, self.game.blocks, False)

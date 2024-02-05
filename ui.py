@@ -33,3 +33,5 @@ class UI:
     def display(self, player):
         self.show_bar(player.actual_health, player.max_health, self.health_bar_rect, HEALTH_COLOR)
 
+
+
