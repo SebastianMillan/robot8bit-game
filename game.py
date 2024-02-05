@@ -19,6 +19,8 @@ from win_screen import WinScreen
 class Game:
     def __init__(self):
         pygame.init()
+        pygame.display.set_caption("ROBOT 8BIT ROGUE-LIKE")
+        pygame.display.set_icon(pygame.image.load(SPRITE_BOMB))
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
@@ -111,9 +113,3 @@ class Game:
     def win(self):
         win_screen = WinScreen(self)
         win_screen.display()
-
-    def check_empty_space(self, empty_spaces):
-        for i, row in enumerate(first_tilemap):
-            for j, column in enumerate(row):
-                if column == ".":
-                    empty_spaces.append((j, i))
